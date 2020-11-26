@@ -1,7 +1,5 @@
-/*
-package com.safetynet.controller;
 
-import java.util.List;
+package com.safetynet.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,6 +15,8 @@ import com.safetynet.model.Persons;
 import com.safetynet.service.ChildAlertService;
 
 import Utils.Util;
+
+import java.util.List;
 
 @RequestMapping("/childAlert")
 @RestController
@@ -45,5 +45,5 @@ public class ChildAlertController {@Autowired
 
 	}
 }
-*/
+
 

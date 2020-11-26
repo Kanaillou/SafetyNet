@@ -22,7 +22,7 @@ public class MedicalRecord {
 	
 	private String[] allergies ;
 	
-public MedicalRecord (String firstName,String lastName, String birthdate , String[] medications ) {
+public MedicalRecord ( ) {
 		
 		
 		this.firstName = firstName ;

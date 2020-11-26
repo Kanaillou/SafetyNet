@@ -1,7 +1,5 @@
-/**
- * 
- 
 package com.safetynet.service;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -18,8 +16,9 @@ import com.safetynet.model.MedicalRecord;
 import com.safetynet.model.PersonInfo;
 import com.safetynet.model.Persons;
 
- * @author Quentin
- *
+
+
+
  
 @Service
 public class ChildAlertService {
@@ -58,7 +57,7 @@ public class ChildAlertService {
 
 	public ChildAlert getChildsAndMembersFamily(List<Persons> listChilds, List<Persons> listPersons) {
 		List<Persons> listMembersOfFamily = new ArrayList<>();
-		List<PersonInfo> listPersonsWithoutDuplicates = new ArrayList<>();
+		List<Persons> listPersonsWithoutDuplicates = new ArrayList<>();
 
 		if (!listChilds.isEmpty()) {
 			for (Persons child : listChilds) {
@@ -86,4 +85,3 @@ public class ChildAlertService {
 	}
 
 }
-*/

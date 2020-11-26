@@ -1,4 +1,4 @@
-/*
+
 package com.safetynet.controller;
 
 import java.util.List;
@@ -48,4 +48,3 @@ public class FloodController {
 	}
 
 }
-*/

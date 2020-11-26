@@ -1,19 +1,24 @@
-/*
+
 package src.test.java.com.safetynet;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
+import org.mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 import Utils.Util;
 
 import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runners.Parameterized.BeforeParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,9 +45,9 @@ public class FireServiceTest {
 	
     private static Util util;
     
-    @BeforeAll
+    @BeforeParam
     private static void setUp() {
-    	 model = mock(Model.class);
+    	 model = mock(MasterModel.class);
     	 util = mock(Util.class);
     	 fireService = new FireService(model, util);
     }
@@ -132,7 +137,7 @@ public class FireServiceTest {
 		
 		List<FireStations> listFirestation = new ArrayList<>();
 		
-		FireStations firestation = new FireStations(null, 0);
+		FireStations firestation = new FireStations("",3);
 		firestation.setAddress("1509 Culver St");
 		firestation.setStation(3);
 		
@@ -153,6 +158,7 @@ public class FireServiceTest {
 
 	    }
    
+
 
 	@Test
 	 public void testGetPersonAndStationNumberByAddressWithStationWithTwoStationNumber () throws Exception {
@@ -293,4 +299,4 @@ public class FireServiceTest {
 		assertEquals(3, Result.getPersons().size());
 	}
 	
-}*/
+}

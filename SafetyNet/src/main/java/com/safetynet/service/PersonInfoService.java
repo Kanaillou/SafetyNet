@@ -1,5 +1,5 @@
-/*
- * 
+
+
  
 package com.safetynet.service;
 import java.util.ArrayList;
@@ -11,12 +11,13 @@ import org.springframework.stereotype.Service;
 import com.safetynet.model.MasterModel;
 import com.safetynet.model.MedicalRecord;
 import com.safetynet.model.PersonInfo;
+import com.safetynet.model.PersonInformation;
 import com.safetynet.model.Persons;
 
 import Utils.Util;
 /**
  * @author Quentin
- *
+ */
  
 @Service
 public class PersonInfoService {
@@ -33,8 +34,8 @@ public class PersonInfoService {
 		 this.util = util2;
 	}
 
-	public PersonInfo getPersonByFirstNameAndLastName(String FirstName, String LastName){
-		PersonInfo personInfo = new PersonInfo();
+	public PersonInformation getPersonByFirstNameAndLastName(String FirstName, String LastName){
+		PersonInformation personInfo = new PersonInformation();
 		List<Persons> listPersons = model.getPersons();
 		List<Persons> ListPersonsWithSameLastName = new ArrayList<>();
 		for(Persons person : listPersons) {
@@ -51,8 +52,8 @@ public class PersonInfoService {
 	}
 	
 	
-	public PersonInfo getPersonsInformationsByFirstNameAndLastName(PersonInfo personInformation) {
-		PersonInfo personInfo = new PersonInfo();
+	public PersonInformation getPersonsInformationsByFirstNameAndLastName(PersonInformation personInformation) {
+		PersonInformation personInfo = new PersonInformation();
 		List<MedicalRecord> listMedicalRecord = model.getMedicalrecords();
 		List<Persons> listPersonsWithSameFamilyName = new ArrayList<>();
 		List<Persons> newListPersonsWithSameFamilyName = new ArrayList<>();
@@ -101,7 +102,6 @@ public class PersonInfoService {
 		}
 		
 		personInfo.setPersonsWithSameLastName(newListPersonsWithSameFamilyName);
-		return new PersonInfo(personInfo.getPerson(), personInfo.getPersonsWithSameLastName());
+		return new PersonInformation(personInfo.getPerson(), personInfo.getPersonsWithSameLastName());
 	}
 }
-*/

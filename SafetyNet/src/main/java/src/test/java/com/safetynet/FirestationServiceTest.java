@@ -1,4 +1,4 @@
-/*package src.test.java.com.safetynet;
+package src.test.java.com.safetynet;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+import org.junit.runners.Parameterized.BeforeParam;
+import org.mockito.Mockito;
 
 import com.safetynet.model.FireStations;
 import com.safetynet.model.MasterModel;
@@ -33,11 +35,11 @@ private static FireStationService firestationService;
 	
     private static Util util;
     
-    @BeforeAll
+    @BeforeParam
     private static void setUp() {
-    	 model = mock(Model.class);
+    	 model = mock(MasterModel.class);
     	 util = mock(Util.class);
-    	 firestationService = new FireStationService(model, util);
+    	 firestationService = new FireStationService();
     }
 
     @Test
@@ -111,7 +113,7 @@ private static FireStationService firestationService;
 		
 		List<MedicalRecord> listMedicalrecords = new ArrayList<>();
 		
-		MedicalRecord medicalrecord1 = new MedicalRecord();
+		MedicalRecord medicalrecord1 = new MedicalRecord(); 
 		medicalrecord1.setFirstName("Peter");
 		medicalrecord1.setLastName("Duncan");
 		medicalrecord1.setBirthdate("09/06/2000");
@@ -144,7 +146,7 @@ private static FireStationService firestationService;
 		
 		listMedicalrecords.add(medicalrecord3);
 		
-		MedicalRecord medicalrecord4 = new MedicalRecord();
+		MedicalRecord medicalrecord4 =new MedicalRecord();
 		medicalrecord4.setFirstName("Brian");
 		medicalrecord4.setLastName("Stelzer");
 		medicalrecord4.setBirthdate("12/06/1975");
@@ -384,79 +386,79 @@ private static FireStationService firestationService;
     	
     	FireStations firestation = new FireStations(null, 0);
 		firestation.setAddress("1509 Culver St");
-		firestation.setStation("3");
+		firestation.setStation(3);
 		
 		listFirestation.add(firestation);
 		
 		FireStations firestation2 = new FireStations(null, 0);
 		firestation2.setAddress("29 15th St");
-		firestation2.setStation("2");
+		firestation2.setStation(2);
 		
 		listFirestation.add(firestation2);
 
 		FireStations firestation3 = new FireStations(null, 0);
 		firestation3.setAddress("834 Binoc Ave");
-		firestation3.setStation("3");
+		firestation3.setStation(3);
 		
 		listFirestation.add(firestation3);
 		
 		FireStations firestation4 = new FireStations(null, 0);
 		firestation4.setAddress("644 Gershwin Cir");
-		firestation4.setStation("1");
+		firestation4.setStation(1);
 		
 		listFirestation.add(firestation4);
 		
 		FireStations firestation5 = new FireStations(null, 0);
 		firestation5.setAddress("748 Townings Dr");
-		firestation5.setStation("3");
+		firestation5.setStation(3);
 		
 		listFirestation.add(firestation5);
 		
 		FireStations firestation6 = new FireStations(null, 0);
 		firestation6.setAddress("112 Steppes Pl");
-		firestation6.setStation("3");
+		firestation6.setStation(3);
 		
 		listFirestation.add(firestation6);
 		
 		FireStations firestation7 = new FireStations(null, 0);
 		firestation7.setAddress("489 Manchester St");
-		firestation7.setStation("4");
+		firestation7.setStation(4);
 		
 		listFirestation.add(firestation7);
 		
 		FireStations firestation8 = new FireStations(null, 0);
 		firestation8.setAddress("892 Downing Ct");
-		firestation8.setStation("2");
+		firestation8.setStation(2);
 		
 		listFirestation.add(firestation8);
 		
 		FireStations firestation9 = new FireStations(null, 0);
 		firestation9.setAddress("908 73rd St");
-		firestation9.setStation("1");
+		firestation9.setStation(1);
 		
 		listFirestation.add(firestation9);
 		
 		FireStations firestation10 = new FireStations(null, 0);
 		firestation10.setAddress("112 Steppes Pl");
-		firestation10.setStation("4");
+		firestation10.setStation(4);
 		
 		listFirestation.add(firestation10);
 		
-		Firestation firestation11 = new Firestation();
+		FireStations firestation11 = new FireStations(null, 0);
 		firestation11.setAddress("947 E. Rose Dr");
-		firestation11.setStation("1");
+		firestation11.setStation(1);
 		
 		listFirestation.add(firestation11);
 		
-		Firestation firestation12 = new Firestation();
+		FireStations firestation12 = new FireStations(null, 0);
 		firestation12.setAddress("748 Townings Dr");
-		firestation12.setStation("3");
+		firestation12.setStation(3);
 		
 		listFirestation.add(firestation12);
 		
-		Firestation firestation13 = new Firestation();
+		FireStations firestation13 = new FireStations(null, 0);
 		firestation13.setAddress("951 LoneTree Rd");
-		firestation13.setStation("2");
+		firestation13.setStation(2);
 		
 		listFirestation.add(firestation13);
 		
@@ -470,4 +472,4 @@ private static FireStationService firestationService;
 		assertEquals(12, listFirestation.size());	
     }
 
-}*/
+}

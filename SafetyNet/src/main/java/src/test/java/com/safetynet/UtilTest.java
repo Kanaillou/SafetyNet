@@ -1,36 +1,26 @@
 
 package src.test.java.com.safetynet;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
-import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
-import static org.mockito.
-//import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.Test;
 
-import com.safetynet.model.ChildAlert;
 import com.safetynet.model.FireStations;
-import com.safetynet.model.Fires;
 import com.safetynet.model.MasterModel;
 import com.safetynet.model.MedicalRecord;
-import com.safetynet.model.PersonInfo;
+import com.safetynet.model.MasterModel;
 import com.safetynet.model.Persons;
-import com.safetynet.service.ChildAlertService;
-import com.safetynet.service.FireService;
 
 import Utils.Util;
-
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.Test;
 
 
 public class UtilTest {
@@ -39,10 +29,10 @@ public class UtilTest {
 		
 	  private static Util util;
 	    
-	    @BeforeAll
+	   @BeforeAll
 	    private static void setUp() {
-	    	 model = mock(Model.class);
-	    	 util = new Util(model);
+	    	 model = mock(MasterModel.class);
+	    	 //util = Util(model);
 	    }
 
 	
@@ -469,7 +459,7 @@ public class UtilTest {
 		
 		when(model.getFirestations()).thenReturn(listFirestation);
 		
-		String stationNumber = "1";
+		int stationNumber = 1;
 		List<String> listAddress = util.getAddressStationsFromStationNumber(stationNumber);
 		assertNotNull(listAddress);
 		assertEquals(3, listAddress.size());

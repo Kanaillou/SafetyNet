@@ -1,4 +1,4 @@
-/*
+
 package com.safetynet.controller;
 
 import java.util.List;
@@ -40,7 +40,7 @@ public class FirestationController {
 
 
 	@GetMapping("")
-	public PersonInfo getPersonsFromNumberStation(@RequestParam String stationNumber) {
+	public PersonInfo getPersonsFromNumberStation(@RequestParam int stationNumber) {
 
 		List<String> address = util.getAddressStationsFromStationNumber(stationNumber);
 		List<Persons> listPerson = util.getPersonsFromAddressStation(address);
@@ -78,4 +78,3 @@ public class FirestationController {
 		return listFirestations;
 	}
 	}
-*/

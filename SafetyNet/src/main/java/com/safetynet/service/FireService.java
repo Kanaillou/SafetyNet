@@ -1,5 +1,5 @@
-/*
- * 
+
+ 
  
 package com.safetynet.service;
 
@@ -18,7 +18,7 @@ import com.safetynet.model.Persons;
 import Utils.Util;
 /**
  * @author Quentin
- *
+ */
  
 @Service
 public class FireService {
@@ -55,4 +55,3 @@ public class FireService {
 	}
 
 }
-*/

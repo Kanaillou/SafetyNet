@@ -1,4 +1,4 @@
-/*
+
 package com.safetynet.controller;
 
 import java.util.List;
@@ -31,7 +31,7 @@ public class PhoneAlertController {
 	private PhoneAlertService phoneAlertService;
 
 	@GetMapping("")
-	public List<String> getPhoneNumberByFirestationNumber(@RequestParam String firestation) {
+	public List<String> getPhoneNumberByFirestationNumber(@RequestParam int firestation) {
 		List<String> listAddress = util.getAddressStationsFromStationNumber(firestation);
 		List<String> listPhoneNumber = phoneAlertService.getPhoneNumberByFirestationNumber(listAddress);
 		logger.info("Request = @RequestBody = {}", firestation);
@@ -42,4 +42,3 @@ public class PhoneAlertController {
 	}
 
 }
-*/

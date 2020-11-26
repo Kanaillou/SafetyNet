@@ -1,11 +1,8 @@
-/**
- * 
- */
+
 package com.safetynet.service;
 
-/**
- * @author Quentin
- *
+
+ 
  
 
 
@@ -67,7 +64,7 @@ public class FireStationService {
 			}
 		}
 
-		return new PersonInfo(listAdults, nbAdults, listChilds, nbChilds);
+		return new PersonInfo();
 	}
 
 	public List<FireStations> add(FireStations firestation) {
@@ -107,4 +104,3 @@ public class FireStationService {
 	}
 
 }
-*/

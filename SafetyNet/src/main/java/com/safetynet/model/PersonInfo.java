@@ -16,7 +16,7 @@ public class PersonInfo {
 	private int nbChilds;
 	private List<Persons> childs;
 
-	public PersonInfo(List<Persons> adults, int nbAdults, List<Persons> childs, int nbChilds) {
+	public PersonInfo() {
 		this.nbAdults = nbAdults;
 		this.adults = adults;
 		this.nbChilds = nbChilds;
@@ -61,4 +61,16 @@ public class PersonInfo {
 				+ childs + "]";
 	}
 
-}
+	public void setPersons(Persons person) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	}
+
+	
+
+	
+
+

@@ -1,4 +1,4 @@
-/*
+
 package com.safetynet.controller;
 
 import org.apache.logging.log4j.LogManager;
@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.safetynet.model.PersonInfo;
+import com.safetynet.model.PersonInformation;
 import com.safetynet.service.PersonInfoService;
+
 
 @RequestMapping("/personInfo")
 @RestController
@@ -22,14 +24,13 @@ public class PersonInfoController {
 	private PersonInfoService personInfoService;
 
 	@GetMapping("")
-	public PersonInfo getPersonsInformationsByFirstNameAndLastName(@RequestParam String firstName,
+	public PersonInformation getPersonsInformationsByFirstNameAndLastName(@RequestParam String firstName,
 			@RequestParam String lastName) {
-		PersonInfo personInfo = personInfoService.getPersonByFirstNameAndLastName(firstName, lastName);
-		PersonInfo personAndPersonsWithSameLastName = personInfoService.getPersonsInformationsByFirstNameAndLastName(personInfo);
+		PersonInformation personInfo = personInfoService.getPersonByFirstNameAndLastName(firstName, lastName);
+		PersonInformation personAndPersonsWithSameLastName = personInfoService.getPersonsInformationsByFirstNameAndLastName(personInfo);
 		logger.info("Request = @RequestParam = {} + {}", firstName, lastName);
 		logger.info("Response {}", personAndPersonsWithSameLastName);
 		return personAndPersonsWithSameLastName;
 
 	}
 }
-*/

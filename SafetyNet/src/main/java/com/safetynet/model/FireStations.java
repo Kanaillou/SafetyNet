@@ -7,7 +7,7 @@ package com.safetynet.model;
  * @author Quentin
  *
  */
-//firestations": [{ "address":"1509 Culver St", "station":"3" },
+
 
 public class FireStations {
 

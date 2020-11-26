@@ -1,5 +1,5 @@
-/**
- 
+
+
  
 package src.test.java.com.safetynet;
 import static org.junit.Assert.assertEquals;
@@ -7,16 +7,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
+import static org.mockito.Mockito.mock;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.stream.Collectors;
-
-
 
 import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.junit.jupiter.api.BeforeAll;
 
 import com.safetynet.model.ChildAlert;
 import com.safetynet.model.MasterModel;
@@ -27,7 +23,7 @@ import com.safetynet.service.ChildAlertService;
 import Utils.Util;
 /**
  * @author Quentin
- *
+ */
  
 public class ChildAlertServiceTest {
 private static ChildAlertService childAlertService;
@@ -37,11 +33,11 @@ private static ChildAlertService childAlertService;
 		
     private static Util util;
     
- //   @BeforeAll
+   @BeforeAll
     
     private static void setUp() {
-    	 model = mock(Model.class);
-    	 util = mock(Util.class);
+    	model = mock(MasterModel.class);
+    	util = mock(Util.class);
     	childAlertService = new ChildAlertService(model, util);
     }
 	
@@ -86,43 +82,43 @@ private static ChildAlertService childAlertService;
 		
 		List<MedicalRecord> listMedicalrecords = new ArrayList<>();
 		
-		MedicalRecord medicalrecord1 = new MedicalRecord (null, null, null, null);
+		MedicalRecord medicalrecord1 = new MedicalRecord ();
 		medicalrecord1.setFirstName("John");
 		medicalrecord1.setLastName("Boyd");
 		medicalrecord1.setBirthdate("03/06/1984");
 		
 		listMedicalrecords.add(medicalrecord1);
 		
-		MedicalRecord medicalrecord2 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord2 = new MedicalRecord();
 		medicalrecord2.setFirstName("Jacob");
 		medicalrecord2.setLastName("Boyd");
 		medicalrecord2.setBirthdate("03/06/1989");
 		
 		listMedicalrecords.add(medicalrecord2);
 		
-		MedicalRecord medicalrecord3 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord3 = new MedicalRecord();
 		medicalrecord3.setFirstName("Tenley");
 		medicalrecord3.setLastName("Boyd");
 		medicalrecord3.setBirthdate("02/18/2012");
 		
 		listMedicalrecords.add(medicalrecord3);
 		
-		MedicalRecord medicalrecord4 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord4 = new MedicalRecord();
 		medicalrecord4.setFirstName("Roger");
 		medicalrecord4.setLastName("Boyd");
 		medicalrecord4.setBirthdate("09/06/2017");
 		
 		listMedicalrecords.add(medicalrecord4);
 		
-		MedicalRecord medicalrecord5 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord5 = new MedicalRecord();
 		medicalrecord5.setFirstName("Felicia");
 		medicalrecord5.setLastName("Boyd");
 		medicalrecord5.setBirthdate("01/08/1986");
 		
 		listMedicalrecords.add(medicalrecord5);
 				
-		when(model.getMedicalrecords()).thenReturn(listMedicalrecords);
-		when(util.calculAge(Mockito.anyString())).thenCallRealMethod();
+		//when(model.getMedicalrecords()).thenReturn(listMedicalrecords);
+		//when(util.calculAge(Mockito.anyString())).thenCallRealMethod();
 		
 		List <Persons> listChilds= childAlertService.getChildsFromListOfPersons(listPersons);
 		assertNotNull(listChilds);
@@ -134,42 +130,42 @@ private static ChildAlertService childAlertService;
 		
 		List<MedicalRecord> listMedicalrecords = new ArrayList<>();
 		
-		MedicalRecord medicalrecord1 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord1 = new MedicalRecord();
 		medicalrecord1.setFirstName("John");
 		medicalrecord1.setLastName("Boyd");
 		medicalrecord1.setBirthdate("03/06/1984");
 		
 		listMedicalrecords.add(medicalrecord1);
 		
-		MedicalRecord medicalrecord2 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord2 = new MedicalRecord();
 		medicalrecord2.setFirstName("Jacob");
 		medicalrecord2.setLastName("Boyd");
 		medicalrecord2.setBirthdate("03/06/1989");
 		
 		listMedicalrecords.add(medicalrecord2);
 		
-		MedicalRecord medicalrecord3 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord3 = new MedicalRecord();
 		medicalrecord3.setFirstName("Tenley");
 		medicalrecord3.setLastName("Boyd");
 		medicalrecord3.setBirthdate("02/18/2012");
 		
 		listMedicalrecords.add(medicalrecord3);
 		
-		MedicalRecord medicalrecord4 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord4 = new MedicalRecord();
 		medicalrecord4.setFirstName("Roger");
 		medicalrecord4.setLastName("Boyd");
 		medicalrecord4.setBirthdate("09/06/2017");
 		
 		listMedicalrecords.add(medicalrecord4);
 		
-		MedicalRecord medicalrecord5 = new MedicalRecord(null, null, null, null);
+		MedicalRecord medicalrecord5 = new MedicalRecord();
 		medicalrecord5.setFirstName("Felicia");
 		medicalrecord5.setLastName("Boyd");
 		medicalrecord5.setBirthdate("01/08/1986");
 		
 		listMedicalrecords.add(medicalrecord5);
 				
-		when(model.getMedicalrecords()).thenReturn(listMedicalrecords);
+		//when(model.getMedicalrecords()).thenReturn(listMedicalrecords);
 		
 		List<Persons> listPersons = null;
 		assertThrows(
@@ -310,4 +306,4 @@ private static ChildAlertService childAlertService;
 	
 
 }
-*/
+
